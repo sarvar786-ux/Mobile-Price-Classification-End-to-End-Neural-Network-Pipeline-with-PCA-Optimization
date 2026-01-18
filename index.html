@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mobile Price Estimator</h1>
+        <p>Enter the specifications to predict the price range.</p>
+
+        <form id="predictionForm">
+            <div class="grid-container">
+                <div class="input-group"><label>Battery Power (mAh)</label><input type="number" id="battery_power"
+                        required></div>
+                <div class="input-group"><label>Bluetooth (0/1)</label><select id="blue">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select></div>
+                <div class="input-group"><label>Clock Speed</label><input type="number" step="0.1" id="clock_speed"
+                        required></div>
+                <div class="input-group"><label>Dual SIM (0/1)</label><select id="dual_sim">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select></div>
+                <div class="input-group"><label>Front Camera (MP)</label><input type="number" id="fc" required></div>
+                <div class="input-group"><label>4G (0/1)</label><select id="four_g">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select></div>
+                <div class="input-group"><label>Internal Memory (GB)</label><input type="number" id="int_memory"
+                        required></div>
+                <div class="input-group"><label>Mobile Depth (cm)</label><input type="number" step="0.1" id="m_dep"
+                        required></div>
+                <div class="input-group"><label>Mobile Weight (g)</label><input type="number" id="mobile_wt" required>
+                </div>
+                <div class="input-group"><label>Number of Cores</label><input type="number" id="n_cores" required></div>
+                <div class="input-group"><label>Primary Camera (MP)</label><input type="number" id="pc" required></div>
+                <div class="input-group"><label>Pixel Height</label><input type="number" id="px_height" required></div>
+                <div class="input-group"><label>Pixel Width</label><input type="number" id="px_width" required></div>
+                <div class="input-group"><label>RAM (MB)</label><input type="number" id="ram" required></div>
+                <div class="input-group"><label>Screen Height (cm)</label><input type="number" id="sc_h" required></div>
+                <div class="input-group"><label>Screen Width (cm)</label><input type="number" id="sc_w" required></div>
+                <div class="input-group"><label>Talk Time (h)</label><input type="number" id="talk_time" required></div>
+                <div class="input-group"><label>3G (0/1)</label><select id="three_g">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select></div>
+                <div class="input-group"><label>Touch Screen (0/1)</label><select id="touch_screen">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select></div>
+                <div class="input-group"><label>WiFi (0/1)</label><select id="wifi">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select></div>
+            </div>
+
+            <button type="button" onclick="makePrediction()">Predict Price</button>
+        </form>
+
+        <div id="result" class="result-box"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 95%;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.input-group:hover {
+    transform: scale(1.03);
+}
+
+label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.result-box {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.result-success {
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+    color: #064635;
+    opacity: 1;
+}
+
+.result-error {
+    background: linear-gradient(90deg, #ff6a6a, #ff8e8e);
+    color: #5a0000;
+    opacity: 1;
+}
+
+.loading {
+    background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+    color: #333;
+    opacity: 1;
+}
